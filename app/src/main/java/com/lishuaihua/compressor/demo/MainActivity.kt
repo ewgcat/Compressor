@@ -116,7 +116,7 @@ class MainActivity : AppCompatActivity() {
                 return
             }
             try {
-                actualImage = FileUtil.from(this, data.data)?.also {
+                actualImage = FileUtil.from(this, data.data!!)?.also {
                     actualImageView.setImageBitmap(loadBitmap(it))
                     actualSizeTextView.text = String.format("Size : %s", getReadableFileSize(it.length()))
                     clearImage()
